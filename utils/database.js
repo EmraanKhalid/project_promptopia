@@ -10,7 +10,7 @@ export const connectToDB = async () =>{
     try{
         await mongoose.connect(process.env.MONGODB_URI,{
             dbName: "share_prompt",
-            serverSelectionTimeoutMS: 3000, // Increase timeout to 30 seconds
+            serverSelectionTimeoutMS: 10000, // Increase timeout to 100 seconds
         }),
         isCOnnected = true;
         console.log('MongoDB connected');
