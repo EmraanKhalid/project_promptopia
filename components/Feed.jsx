@@ -27,10 +27,6 @@ const Feed = () =>{
     const fetchPosts = async() =>{
         try{
             const response = await fetch('/api/prompt');
-            if (!response.ok) {
-                // If the response is not successful, throw an error with the status text
-                throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
-            }
             const data = await response.json();
             setPosts(data);
         }
